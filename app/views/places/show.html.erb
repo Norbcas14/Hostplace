@@ -1,0 +1,13 @@
+<h1>MY PLACES</h1>
+<h1> <%= @place.name %></h1>
+<p><%= @place.country %></p>
+<p><%= @place.address %></p>
+<p><%= @place.description %></p>
+<p><%= @place.picture %></p>
+
+<%= link_to "Back to places", root_path %>
+<%= link_to "Edit place", edit_place_path %>
+<%= link_to "Delete",
+  place_path(@place),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
