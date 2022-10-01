@@ -1,1 +1,6 @@
-<h1>Por favor funciona!</h1>
+<h1>PLACES LIST</h1>
+<ul>
+  <% @places.each do |place| %>
+    <li><%= link_to place.name, places_path(place) %></li>
+  <% end %>
+</ul>
