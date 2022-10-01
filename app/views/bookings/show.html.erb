@@ -1,18 +1,20 @@
 <div class="container justify-content center">
-  <h1>MY PLACES</h1>
+  <h1>My reservation</h1>
   <h1> <%= @place.name %></h1>
   <p><%= @place.country %></p>
   <p><%= @place.address %></p>
   <p><%= @place.description %></p>
   <p><%= @place.picture %></p>
+   <p><%= @booking.start_date %></p>
+  <p><%= @booking.end_date %></p>
 
   <%= link_to "Back to places", root_path %>
-  <%= link_to "Edit place", edit_place_path %>
+  <%= link_to "Edit place", edit_booking_path %>
   <%= link_to "Delete",
     place_path(@place),
     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 
   <div class="container justify-content center">
-  <button type="button" class="btn btn-primary btn-lg" link_to new_place_booking_path>Reservar</button>
+  <button type="button" class="btn btn-primary btn-lg" link_to booking_path>Completar</button>
   </div>
 </div>

@@ -36,11 +36,11 @@ class PlacesController < ApplicationController
   def destroy
     @place = Place.find(params[:id])
     @place.destroy
-    redirect_to articles_path, status: :see_other
+    redirect_to root_path, status: :see_other
   end
 
   private
   def place_params
-    params.require(:place).permit(:name, :country, :description, :address, :picture)
+    params.require(:place).permit(:name, :country,  :address, :description, :picture)
   end
 end
