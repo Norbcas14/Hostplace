@@ -4,8 +4,14 @@
   <% @places.each do |place| %>
     <li><%= link_to place.name, place_path(place[:id]) %></li>
     <p><%= place.country %></p>
+    <p><%= place.address %></p>
     <p><%= place.description %></p>
-
+    <%= link_to "Delete", root_path(@place),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
     <% end %>
 </div>
 </ul>
+
+<div class="container justify-content center">
+<button type="button" class="btn btn-primary btn-lg" link_to new_place_booking_path>My reservations</button>
+</div>
