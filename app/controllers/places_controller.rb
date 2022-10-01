@@ -24,6 +24,13 @@ class PlacesController < ApplicationController
 
   def edit
     @place = Place.find(params[:id])
+    @place.user = current_user
+  end
+
+  def update
+    @place = Place.find(params[:id])
+    @place.update(place_params)
+    redirect_to root_path(@places)
   end
 
   def destroy
