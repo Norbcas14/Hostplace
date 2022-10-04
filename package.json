@@ -18,6 +18,7 @@
     "defaults"
   ],
   "devDependencies": {
+    "bootstrap-sass": "^3.3.7",
     "@webpack-cli/serve": "^1.7.0",
     "webpack-dev-server": "^4.11.1"
   },

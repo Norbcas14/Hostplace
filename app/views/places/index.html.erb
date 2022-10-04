@@ -1,14 +1,10 @@
+<h1 class="text-center">PLACES LIST</h1>
 <div id="articles" class="container">
-  <h1>PLACES LIST</h1>
 
     <% @places.each do |place| %>
       <%= render place %>
       <p>
-        <%= link_to "Show place", place %>
-        <%= link_to "Edit place", edit_place_path(place) %>
-        <%= button_to "Destroy this place", place, method: :delete %>
-
   <% end %>
-</div>
 
-<%= link_to "New Place", new_place_path %>
+  <%= button_to "New Place", new_place_path, method: :get  %>
+</div>

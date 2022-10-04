@@ -1,4 +1,4 @@
-<div id="<%= dom_id place %>">
+<div id="<%= dom_id place %>" class="bg-info container">
 
   <h1>
     <%= link_to(place.name, place) %>
@@ -23,4 +23,8 @@
     <strong>Picture:</strong>
     <%= place.picture %>
   </p>
+
+  <%= button_to "Edit place", edit_place_path(place), method: :get %>
+  <br>
+  <%= button_to "Destroy this place", place, method: :delete %>
 </div>
