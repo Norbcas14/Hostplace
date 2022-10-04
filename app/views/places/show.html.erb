@@ -10,7 +10,8 @@
   <%= link_to "Edit place", edit_place_path %>
   <%= link_to "Delete",
     place_path(@place),
-    data: {turbo: true, turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    method: :delete,
+    data: { confirm: "Are you sure?" } %>
 
   <div class="container justify-content center">
   <button type="button" class="btn btn-primary btn-lg" link_to new_place_booking_path>Reservar</button>
