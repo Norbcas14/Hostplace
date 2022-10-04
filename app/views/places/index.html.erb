@@ -1,11 +1,14 @@
-<div class="container">
-<h1>PLACES LIST</h1>
-<ul>
-  <% @places.each do |place| %>
-    <li><%= link_to place.name, place_path(place[:id]) %></li>
-    <p><%= place.country %></p>
-    <p><%= place.description %></p>
+<div id="articles" class="container">
+  <h1>PLACES LIST</h1>
 
-    <% end %>
+    <% @places.each do |place| %>
+      <%= render place %>
+      <p>
+        <%= link_to "Show place", place %>
+        <%= link_to "Edit place", edit_place_path(place) %>
+        <%= button_to "Destroy this place", place, method: :delete %>
+
+  <% end %>
 </div>
-</ul>
+
+<%= link_to "New Place", new_place_path %>

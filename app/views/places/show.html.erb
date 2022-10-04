@@ -1,10 +1,8 @@
-<h1>MY PLACES</h1>
-<h1> <%= @place.name %></h1>
-<p><%= @place.country %></p>
-<p><%= @place.address %></p>
-<p><%= @place.description %></p>
-<p><%= @place.picture %></p>
+<div class="container">
+  <%= render @place %>
 
-<%= link_to "Back to places", root_path %>
-<%= link_to "Edit place", edit_place_path %>
-<%= link_to "Delete", places_path, data: { turbo_method: :destroy, turbo_confirm: "Are you sure?" } %>
+  <%= link_to "Back to places", root_path %>
+  <%= link_to "Edit place", edit_place_path %>
+  <%= button_to "Destroy this place", @place, method: :delete %>
+
+</div>

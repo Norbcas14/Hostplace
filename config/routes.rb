@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root to: "places#index"  # Defines the root path route ("/")
 
-  # Defines the root path route ("/")
-  root to: "places#index"
+  devise_for :users
   resources :places
 end
