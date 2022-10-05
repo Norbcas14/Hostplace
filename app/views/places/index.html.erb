@@ -1,17 +1,10 @@
-<div class="container">
-<h1>PLACES LIST</h1>
-<ul>
-  <% @places.each do |place| %>
-    <li><%= link_to place.name, place_path(place[:id]) %></li>
-    <p><%= place.country %></p>
-    <p><%= place.address %></p>
-    <p><%= place.description %></p>
-    <%= link_to "Delete", root_path(@place),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-    <% end %>
-</div>
-</ul>
+<h1 class="text-center">PLACES LIST</h1>
+<div id="articles" class="container">
 
-<div class="container justify-content center">
-<button type="button" class="btn btn-primary btn-lg" link_to new_place_booking_path>My reservations</button>
+    <% @places.each do |place| %>
+      <%= render place %>
+      <p>
+  <% end %>
+
+  <%= button_to "New Place", new_place_path, method: :get  %>
 </div>
