@@ -1,11 +1,10 @@
-<div class="container">
-<h1>PLACES LIST</h1>
-<ul>
-  <% @places.each do |place| %>
-    <li><%= link_to place.name, place_path(place[:id]) %></li>
-    <p><%= place.country %></p>
-    <p><%= place.description %></p>
+<h1 class="text-center">PLACES LIST</h1>
+<div id="articles" class="container">
 
-    <% end %>
+    <% @places.each do |place| %>
+      <%= render place %>
+      <p>
+  <% end %>
+
+  <%= button_to "New Place", new_place_path, method: :get  %>
 </div>
-</ul>
