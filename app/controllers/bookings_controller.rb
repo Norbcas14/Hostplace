@@ -8,6 +8,7 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @place = Place.find(params[:place_id])
   end
 
   def create
@@ -15,8 +16,11 @@ class BookingsController < ApplicationController
     @place = Place.find(params[:place_id])
     @booking.user = current_user
     @booking.place = @place
-    @booking.save
-    redirect_to root_path(@places)
+    if @booking.save
+      redirect_to place_path(@place)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show
@@ -42,6 +46,6 @@ class BookingsController < ApplicationController
 
   private
   def booking_params
-    params.require(:place).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end
