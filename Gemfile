@@ -27,6 +27,12 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+# Processing images in ruby
+gem 'image_processing', '~> 1.12', '>= 1.12.2'
+
+# Handling file uploads with shrine [https://shrinerb.com]
+gem "shrine", "~> 3.0"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
