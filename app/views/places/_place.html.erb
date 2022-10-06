@@ -19,12 +19,14 @@
     <%= place.description %>
   </p>
 
-  <p>
+  <span>
     <strong>Picture:</strong>
-    <%= image_tag(place.picture)%>
-  </p>
-
     <p>
+      <%= image_tag(place.picture_url) %>
+    </p>
+  </span>
+
+  <p>
     <strong>User:</strong>
     <%= place.user.email %>
   </p>
