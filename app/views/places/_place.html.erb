@@ -6,25 +6,25 @@
 
   <p>
     <strong>Country:</strong>
-    <%= place.country %>
+    <%= locals[:place].country %>
   </p>
 
   <p>
     <strong>Address:</strong>
-    <%= place.address %>
+    <%= locals[:place].address %>
   </p>
 
   <p>
     <strong>Description:</strong>
-    <%= place.description %>
+    <%= locals[:place].description %>
   </p>
 
   <p>
     <strong>Picture:</strong>
-    <%= place.picture %>
+    <%= locals[:place].picture %>
   </p>
 
-  <%= button_to "Edit place", edit_place_path(place), method: :get %>
+  <%= button_to "Edit place", edit_place_path (locals[:place]), method: :get %>
   <br>
   <%= button_to "Destroy this place", place, method: :delete %>
 </div>

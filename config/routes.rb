@@ -6,5 +6,4 @@ Rails.application.routes.draw do
     resources :bookings
   end
 
-  resources :places
 end
