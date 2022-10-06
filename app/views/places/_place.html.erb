@@ -21,7 +21,12 @@
 
   <p>
     <strong>Picture:</strong>
-    <%= place.picture %>
+    <%= image_tag(place.picture)%>
+  </p>
+
+    <p>
+    <strong>User:</strong>
+    <%= place.user.email %>
   </p>
 
   <%= button_to "Edit place", edit_place_path(place), method: :get %>
