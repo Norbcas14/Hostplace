@@ -21,7 +21,13 @@
 
   <p>
     <strong>Picture:</strong>
-    <%= locals[:place].picture %>
+
+    <%= image_tag(locals[:place].picture)%>
+  </p>
+
+    <p>
+    <strong>User:</strong>
+    <%= locals[:place].user.email %>
   </p>
 
   <%= button_to "Edit place", edit_place_path (locals[:place]), method: :get %>
