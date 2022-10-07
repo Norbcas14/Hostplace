@@ -1,7 +1,7 @@
-<div id="<%= dom_id place %>" class="bg-info container">
+<div class="bg-info container">
 
   <h1>
-    <%= link_to(place.name, place) %>
+    <%= link_to(locals[:place].name, locals[:place]) %>
   </h1>
 
   <p>
@@ -21,10 +21,10 @@
 
   <p>
     <strong>Picture:</strong>
-    <%= locals[:place].picture %>
+    <%= cl_image_tag locals[:place].photo.key, height: 500, width: 500, crop: :fill %>
   </p>
 
-  <%= button_to "Edit place", edit_place_path (locals[:place]), method: :get %>
+  <%= button_to "Edit place", edit_place_path(locals[:place]), method: :get %>
   <br>
-  <%= button_to "Destroy this place", place, method: :delete %>
+  <%= button_to "Destroy this place", locals[:place], method: :delete %>
 </div>
