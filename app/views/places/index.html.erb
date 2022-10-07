@@ -2,7 +2,7 @@
 <div id="articles" class="container">
 
     <% @places.each do |place| %>
-      <%= render place %>
+      <%= render 'place', locals: { place: place } %>
       <p>
   <% end %>
 

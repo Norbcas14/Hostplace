@@ -3,12 +3,12 @@
     {
       "previewLimit": 50,
       "server": "localhost",
-      "port": 5433,
+      "port": 5432,
       "driver": "PostgreSQL",
-      "name": "db windows",
+      "name": "test_connection",
       "database": "Hostplace_development",
-      "username": "postgres",
-      "password": "1035436952"
+      "username": "juanarango",
+      "password": ""
     }
   ]
 }
