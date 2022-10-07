@@ -55,7 +55,7 @@ class PlacesController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to places_url }
-      flash[:notice] = "place was successfully deleted."
+      flash[:notice] = 'place was successfully deleted.'
       format.json { head :see_other }
     end
   end
@@ -66,8 +66,9 @@ class PlacesController < ApplicationController
   # end
 
   private
+
   def place_params
-    params.require(:place).permit(:name, :country, :description, :address, :picture)
+    params.require(:place).permit(:name, :country, :address, :description, :photo)
   end
 
   def set_place

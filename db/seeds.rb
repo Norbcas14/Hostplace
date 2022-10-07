@@ -22,5 +22,6 @@ require 'faker'
     description: Faker::Lorem.paragraph,
     user_id: aux_user.id,
     picture: Faker::LoremFlickr.image
+
   )
 end
