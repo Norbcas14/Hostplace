@@ -1,11 +1,12 @@
-  <div class="card p-2">
-    <%# <%= cl_image_tag locals[:place].photo.key, height: 400, width: 600, crop: :fill %> %>
-    <%= locals[:place].inspect%>
+
+  <div class= "card w-50">
+    <%# <%= cl_image_tag locals[:place].photo.key, height: 400, width: 600, crop: :fill %>
+    <%= cl_image_tag locals[:place].photo.key, height: 300, crop: :fill %>
     <div class="card-body">
       <h1><%= link_to(locals[:place].name, locals[:place], class:"h1")%></h1>
       <ul>
       <p><strong>Country:</strong>
-      <%= locals[:place].country %></p>
+      <%= locals[:place].country_name %></p>
       <p><strong>Address:</strong>
       <%= locals[:place].address %></p>
       <p><strong>Description:</strong>

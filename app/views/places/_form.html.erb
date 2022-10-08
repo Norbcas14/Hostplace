@@ -1,16 +1,12 @@
 <div class="form">
-  <%= form_with(model: place) do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.label :country %>
-    <%= f.text_field :country %>
-    <%= f.label :address %>
-    <%= f.text_field :address %>
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-    <%= f.label :photo %>
-    <%= f.file_field :photo %>
+  <%= simple_form_for(place) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :country %>
+    <%= f.input :address %>
+    <%= f.input :description %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit %>
   <% end %>
 
 </div>
+

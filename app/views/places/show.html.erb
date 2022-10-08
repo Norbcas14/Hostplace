@@ -1,13 +1,18 @@
 <div class="container justify-content center">
+  <%# <%= cl_image_tag locals[:place].photo.key, height: 400, width: 600, crop: :fill %>
+  <%= cl_image_tag @place.photo.key, height: 300, width: 400, crop: :fill %>
+
   <h2><%= @place.name %></h2>
-  <p><%= @place.country %></p>
+  <p><%= ISO3166::Country[@place.country].common_name
+ %></p>
   <p><%= @place.address %></p>
   <p><%= @place.description %></p>
+  <p>Created by: <%= @place.user.email %></p>
 
 <div class="btn-group" role="group" aria-label="Basic example">
   <%= button_to "Back to places", root_path, method: :get, class: "btn btn-success" %>
   <%= button_to "Edit place", edit_place_path(@place), method: :get, class: "btn btn-success" %>
-  <%= button_to "Eliminar", @place, method: :delete, class: "btn btn-success" %>
-  <%= button_to "Reservar", new_place_booking_path(@place), class: "btn btn-success"  %>
+  <%= button_to "Eliminar",  place_path(@place), method: :delete, class: "btn btn-success", data: {turbo_confirm: "Estas seguro?"} %>
+  <%= link_to "Reservar", new_place_booking_path(@place), class: "btn btn-success"  %>
   <%# TODO: el boton de 'Reservar' no funciona, por lo que se debe agregar la funcionalidad :) %>
 </div>

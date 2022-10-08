@@ -50,14 +50,9 @@ class PlacesController < ApplicationController
   # DELETE /articles/1 or /articles/1.json
   def destroy
     # debugger
-
     @place.destroy
-
-    respond_to do |format|
-      format.html { redirect_to places_url }
-      flash[:notice] = 'place was successfully deleted.'
-      format.json { head :see_other }
-    end
+    flash[:notice] = 'place was successfully deleted.'
+    redirect_to root_path, status: :see_other
   end
 
   # def destroy
