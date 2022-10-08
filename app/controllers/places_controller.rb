@@ -1,6 +1,6 @@
 class PlacesController < ApplicationController
-  before_action :set_place, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate_user!, only: :home
+  before_action :set_place, only: %i[show edit update destroy]
+  skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
     @places = Place.all

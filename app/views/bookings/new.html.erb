@@ -1,8 +1,6 @@
 <h1>My new reservation</h1>
 <%= simple_form_for [@place, @booking] do |f| %>
-  <%= f.label :start_date %>
-  <%= f.text_field :start_date %>
-  <%= f.label :end_date %>
-  <%= f.text_field :end_date %>
+  <%= f.input :start_date, as: :date, order: [:day, :month, :year]%>
+  <%= f.input :end_date, as: :date, order: [:day, :month, :year]%>
   <%= f.submit %>
 <% end %>

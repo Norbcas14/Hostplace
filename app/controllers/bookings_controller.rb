@@ -1,9 +1,13 @@
 class BookingsController < ApplicationController
-
-  skip_before_action :authenticate_user!, only: :home
+  before_action :set_booking, only: %i[show edit update destroy]
 
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(user_id: current_user)
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
+    @user = User.find(params[:user_id])
   end
 
   def new
@@ -14,38 +18,37 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @place = Place.find(params[:place_id])
-    @booking.user = current_user
     @booking.place = @place
+    @booking.user = current_user
     if @booking.save
       redirect_to place_path(@place)
     else
-      render :new, status: :unprocessable_entity
+      render :new
     end
   end
 
-  def show
-    @booking = Booking.find(params[:id])
-  end
-
-  def edit
-    @booking = Booking.find(params[:id])
-    @booking.user = current_user
-  end
-
   def update
-    @booking = Booking.find(params[:id])
-    @booking.update(place_params)
-    redirect_to root_path(@places)
+    if @booking.update(booking_params)
+      redirect_to @booking
+    else
+      render :edit
+    end
   end
+
+  def edit; end
 
   def destroy
-    @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to root_path, status: :see_other
+    redirect_to bookings_path
   end
 
   private
+
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
+  end
+
+  def set_booking
+    @booking = Booking.find(params[:id])
   end
 end
