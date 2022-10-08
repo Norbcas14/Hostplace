@@ -1,7 +1,12 @@
-<h1 class="text-center d-flex justify-content-center">PLACES LIST</h1>
+<h1 class="text-center d-flex justify-content-center"></h1>
 <div id="articles" class="container">
+  <div class="row">
     <% @places.each do |place| %>
+    <div class="col-md-6 col-lg-4">
       <%= render 'place', locals: { place: place } %>
+    </div>
     <% end %>
+  </div>
 </div>
- <%= button_to "New Place", new_place_path, method: :get, class:"btn btn-success" %>
+
+ <%= button_to "New Place", new_place_path, method: :get, class:"btn btn-primary" %>
