@@ -6,17 +6,19 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-require 'open-uri'
-
-user = User.first
-puts "Create a set of places"
-10.times do |i|
-  Place.create!(
-    name: Faker::Address.city,
-    country: Faker::Address.country,
-    address: Faker::Address.full_address,
-    description: Faker::Lorem.paragraph,
-    user: user,
-    photo: URI.open(Faker::LoremPixel.image)
-  )
-end
+# user = User.find(1)
+# Create a set of places
+# 10.times do
+#   aux_user = User.create(
+#     email: Faker::Internet.email,
+#     password: '123456'
+#   )
+#   Place.create!(
+#     name: Faker::Address.city,
+#     country: Faker::Address.country,
+#     address: Faker::Address.full_address,
+#     description: Faker::Lorem.paragraph,
+#     user_id: aux_user.id,
+#     picture: Faker::LoremPixel.image
+#   )
+# end
