@@ -13,9 +13,11 @@ class PlacesController < ApplicationController
   def create
     @place = Place.new(place_params)
     @place.user = current_user
-    @place.save
-    # No need for app/views/restaurants/create.html.erb
-    redirect_to root_path(@places)
+    if @place.save
+      redirect_to place_path(@place)
+    else
+      render :new
+    end
   end
 
   def show
@@ -24,8 +26,8 @@ class PlacesController < ApplicationController
   end
 
   def edit
+    redirect_to root_path unless @place.user == current_user
     # @place = Place.find(params[:id])
-    @place.user = current_user
   end
 
   def update
@@ -49,6 +51,7 @@ class PlacesController < ApplicationController
 
   # DELETE /articles/1 or /articles/1.json
   def destroy
+    redirect_to root_path unless @place.user == current_user
     # debugger
     @place.destroy
     flash[:notice] = 'place was successfully deleted.'
