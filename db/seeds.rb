@@ -9,17 +9,17 @@
 
 # user = User.find(1)
 # Create a set of places
-10.times do
-  aux_user = User.create(
-    email: Faker::Internet.email,
-    password: '123456'
-  )
-  Place.create!(
-    name: Faker::Address.city,
-    country: Faker::Address.country,
-    address: Faker::Address.full_address,
-    description: Faker::Lorem.paragraph,
-    user_id: aux_user.id,
-    picture: Faker::LoremPixel.image
-  )
-end
+# 10.times do
+#   aux_user = User.create(
+#     email: Faker::Internet.email,
+#     password: '123456'
+#   )
+#   Place.create!(
+#     name: Faker::Address.city,
+#     country: Faker::Address.country,
+#     address: Faker::Address.full_address,
+#     description: Faker::Lorem.paragraph,
+#     user_id: aux_user.id,
+#     picture: Faker::LoremPixel.image
+#   )
+# end
