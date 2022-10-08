@@ -22,7 +22,7 @@
   <span>
     <strong>Picture:</strong>
     <p>
-      <%= image_tag(place.picture_url) %>
+      <%= place.picture ? image_tag(place.picture_url) : "Imagen no disponible" %>
     </p>
   </span>
 
