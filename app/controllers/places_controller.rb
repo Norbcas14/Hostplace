@@ -11,6 +11,7 @@ class PlacesController < ApplicationController
   end
 
   def create
+    debugger
     @place = Place.new(place_params)
     @place.user = current_user
     @place.save

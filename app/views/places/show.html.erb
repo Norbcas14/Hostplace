@@ -4,11 +4,11 @@
   <p><%= @place.address %></p>
   <p><%= @place.description %></p>
 
-<div class="btn-group" role="group" aria-label="Basic example">
-  <%= link_to "Back to places", root_path, class:"btn btn-success" %>
-  <%= link_to "Edit place", edit_place_path,class:"btn btn-success" %>
-  <%= link_to "Delete",
-    place_path(@place),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},class:"btn btn-success" %>
-  <%= link_to "Reservar", new_place_booking_path(@place), class:"btn btn-success"  %>
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <%= button_to "Back to places", root_path, method: :get, class:"btn btn-success" %>
+    <%= button_to "Edit place", edit_place_path(@place), method: :get, class:"btn btn-success" %>
+    <%= button_to "Delete", @place, method: :delete, class:"btn btn-success" %>
+    <%= button_to "Reservar", new_place_booking_path(@place), class:"btn btn-success"  %>
+    <%# TODO: el boton de reservar aun no funciona, por lo que se debe agregar la funcionalidad :) %>
+  </div>
 </div>
