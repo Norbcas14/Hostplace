@@ -1,30 +1,14 @@
-<div class="bg-info container">
-
-  <h1>
-    <%= link_to(locals[:place].name, locals[:place]) %>
-  </h1>
-
-  <p>
-    <strong>Country:</strong>
-    <%= locals[:place].country %>
-  </p>
-
-  <p>
-    <strong>Address:</strong>
-    <%= locals[:place].address %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= locals[:place].description %>
-  </p>
-
-  <p>
-    <strong>Picture:</strong>
-    <%= cl_image_tag locals[:place].photo.key, height: 500, width: 500, crop: :fill %>
-  </p>
-
-  <%= button_to "Edit place", edit_place_path(locals[:place]), method: :get %>
-  <br>
-  <%= button_to "Destroy this place", locals[:place], method: :delete %>
+  <div class="card p-2">
+    <%= cl_image_tag locals[:place].photo.key, height: 400, width: 600, crop: :fill %>
+    <div class="card-body">
+      <h1><%= link_to(locals[:place].name, locals[:place], class:"h1")%></h1>
+      <ul>
+      <p><strong>Country:</strong>
+      <%= locals[:place].country %></p>
+      <p><strong>Address:</strong>
+      <%= locals[:place].address %></p>
+      <p><strong>Description:</strong>
+      <%= locals[:place].description %></p>
+    </div>
+    </ul>
 </div>

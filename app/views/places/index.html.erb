@@ -1,10 +1,8 @@
-<h1 class="text-center">PLACES LIST</h1>
+<h1 class="text-center d-flex justify-content-center">PLACES LIST</h1>
 <div id="articles" class="container">
-
+  <%= button_to "New Place", new_place_path, method: :get, class:"btn btn-success" %>
     <% @places.each do |place| %>
       <%= render 'place', locals: { place: place } %>
       <p>
-  <% end %>
-
-  <%= button_to "New Place", new_place_path, method: :get  %>
+    <% end %>
 </div>

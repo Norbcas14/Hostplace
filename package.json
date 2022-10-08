@@ -4,9 +4,9 @@
   "dependencies": {
     "@popperjs/core": "^2.11.6",
     "@rails/webpacker": "^6.0.0-rc.6",
-    "bootstrap": "^5.2.1",
-    "webpack": "^5.53.0",
-    "webpack-cli": "^4.8.0"
+    "bootstrap": "^5.2.2",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
   },
   "version": "0.1.0",
   "babel": {
@@ -18,8 +18,8 @@
     "defaults"
   ],
   "devDependencies": {
-    "bootstrap-sass": "^3.3.7",
     "@webpack-cli/serve": "^1.7.0",
+    "bootstrap-sass": "^3.3.7",
     "webpack-dev-server": "^4.11.1"
   },
   "scripts": {

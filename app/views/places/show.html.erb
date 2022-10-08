@@ -1,17 +1,14 @@
 <div class="container justify-content center">
-  <h1> <%= @place.name %></h1>
+  <h2><%= @place.name %></h2>
   <p><%= @place.country %></p>
   <p><%= @place.address %></p>
   <p><%= @place.description %></p>
-  <p><%= @place.photo %></p>
 
-  <%= link_to "Back to places", root_path %>
-  <%= link_to "Edit place", edit_place_path %>
+<div class="btn-group" role="group" aria-label="Basic example">
+  <%= link_to "Back to places", root_path, class:"btn btn-success" %>
+  <%= link_to "Edit place", edit_place_path,class:"btn btn-success" %>
   <%= link_to "Delete",
     place_path(@place),
-    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-
-  <div class="container justify-content center">
-  <button type="button" class="btn btn-primary btn-lg" link_to new_place_booking_path>Reservar</button>
-  </div>
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},class:"btn btn-success" %>
+  <%= link_to "Reservar", new_place_booking_path(@place), class:"btn btn-success"  %>
 </div>

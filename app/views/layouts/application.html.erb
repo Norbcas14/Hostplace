@@ -3,18 +3,18 @@
   <head>
     <title>Hostplace</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_pack_tag "application" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
-
   <body>
+    <%= render "shared/flashes" %>
     <%= render "shared/navbar" %>
     <div class="container justify-content center">
-      <%= render "shared/flashes" %>
-    </div>
     <%= yield %>
+    </div>
   </body>
 </html>
